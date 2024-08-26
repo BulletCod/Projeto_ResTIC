@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fundo da tela */
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Evitar rolagem horizontal para tornar responsivo */
+    font-size: 62.5%;
+    color: rgb(255, 255, 255);
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background: linear-gradient(rgba(41, 35, 35, 0.8), rgb(127, 137, 230)), url(/imagem/gordo.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menu-header-navbar */
+header {
+    width: 100%;
+    height: 10vh;
+    background: rgba(27, 27, 27, 0.2);
+    overflow: hidden;
+}
+
+.menu-content {
+    text-transform: uppercase;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.6rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    letter-spacing: 0.4rem;
+    cursor: pointer;
+}
+
+.menu-content .list-itens {
+    display: flex;
+    list-style: none;
+    gap: 0px;
+}
+
+.menu-content .list-itens a {
+    text-decoration: none;
+    color: rgb(185, 177, 177);
+    padding: 1.5rem;
+    transition: 2ms ease-in;
+    position: relative;
+}
+
+.menu-content .list-itens a::before {
+    content: ' ';
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 0px;
+    height: 1px;
+    background-color: rgb(207, 200, 96);
+    transition: all 1.5s ease;
+}
+
+.menu-content .list-itens a:hover:before {
+    width: 100%;
+}
+
+/* Centro - Conteúdo principal */
+main {
+    height: calc(100vh - 10vh); /* Altura exata da tela menos o cabeçalho */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Textos principais */
+.primary-text {
+    width: 850px;
+    font-size: 6rem;
+    margin-bottom: 2rem;
+}
+
+.second-text {
+    margin-bottom: 7rem;
+    font-size: 2rem;
+    color: rgb(80, 80, 114);
+    text-transform: uppercase;
+}
+
+/* Botões */
+.btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btns button {
+    width: 250px;
+    height: 60px;
+    cursor: pointer;
+    border: 1px solid white;
+    color: white;
+    text-transform: uppercase;
+    background-color: transparent;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    border-radius: 20px;
+    position: relative;
+    transition: 1.5s;
+}
+
+.btns button:hover {
+    color: rgb(251, 255, 0);
+    border: none;
+}
+
+.btns button::before {
+    content: ' ';
+    border-radius: 20px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 0;
+    height: 60px;
+    background-color: rgb(83, 83, 90);
+    z-index: -1;
+    transition: 1s;
+}
+
+.btns button:hover:before {
+    width: 100%;
+}
+
+/* Estilo do formulário */
+.form-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+    width: 100%;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.form-content input,
+.form-content textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.6rem;
+}
+
+.form-content input:focus,
+.form-content textarea:focus {
+    outline: none;
+    border-color: #6A1B9A;
+}
+
+.form-content textarea {
+    resize: none;
+    height: 100px;
+}
+
+.btn-submit {
+    background-color: #6A1B9A;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #5a007a;
+}
+
+/* Elemento de Mensagem */
+#messageDisplay {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 1024px) {
+    .primary-text {
+        font-size: 4.5rem;
+        width: 700px;
+    }
+
+    .second-text {
+        font-size: 1.8rem;
+        margin-bottom: 5rem;
+    }
+
+    .btns button {
+        width: 220px;
+        height: 55px;
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        height: 12vh;
+    }
+
+    .menu-content {
+        flex-direction: column;
+        font-size: 1.4rem;
+    }
+
+    .primary-text {
+        font-size: 3.5rem;
+        width: 600px;
+    }
+
+    .second-text {
+        font-size: 1.6rem;
+        margin-bottom: 4rem;
+    }
+
+    .btns {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btns button {
+        width: 200px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 15vh;
+    }
+
+    .menu-content {
+        font-size: 1.2rem;
+    }
+
+    .primary-text {
+        font-size: 2.5rem;
+        width: 90%;
+    }
+
+    .second-text {
+        font-size: 1.4rem;
+        margin-bottom: 3rem;
+    }
+
+    .btns button {
+        width: 180px;
+        height: 45px;
+        font-size: 1rem;
+    }
+}
